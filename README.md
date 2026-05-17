@@ -149,8 +149,3 @@ git clone URL_DO_REPOSITORIO
 ## Tela de Energia Mecânica
 ![Energia_mecanica](assets/energiamecanica.png)
 ---
-
-# 👨‍💻 Desenvolvido por
-
-Felipe  
-Estudante de Desenvolvimento de Software Multiplataforma — FATEC

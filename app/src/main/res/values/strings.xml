@@ -1,3 +1,122 @@
 <resources>
-    <string name="app_name">Checkbox</string>
+    <string name="app_name">Calculadora F&amp;M</string>
+    <string name="app_subtitle">Física &amp; Matemática</string>
+
+    <!-- Main Menu -->
+    <string name="menu_fisica">Física</string>
+    <string name="menu_matematica">Matemática</string>
+    <string name="menu_titulo">Menu Principal</string>
+    <string name="menu_escolha">Escolha um módulo</string>
+    <string name="historico_titulo">Histórico de Cálculos</string>
+    <string name="historico_vazio">Nenhum cálculo realizado ainda.</string>
+    <string name="btn_limpar_historico">Limpar Histórico</string>
+
+    <!-- Física Menu -->
+    <string name="fisica_menu_titulo">Módulo de Física</string>
+    <string name="fisica_cinematica">Cinemática</string>
+    <string name="fisica_dinamica">Dinâmica</string>
+    <string name="fisica_energia">Trabalho e Energia</string>
+    <string name="fisica_termologia">Termologia</string>
+    <string name="fisica_optica">Óptica</string>
+
+    <!-- Matemática Menu -->
+    <string name="mat_menu_titulo">Módulo de Matemática</string>
+    <string name="mat_geo_plana">Geometria Plana</string>
+    <string name="mat_geo_espacial">Geometria Espacial</string>
+    <string name="mat_equacoes">Equações (Bhaskara)</string>
+    <string name="mat_trigonometria">Trigonometria</string>
+    <string name="mat_estatistica">Estatística</string>
+
+    <!-- Common -->
+    <string name="btn_calcular">Calcular</string>
+    <string name="btn_limpar">Limpar</string>
+    <string name="resultado_prefix">Resultado:</string>
+    <string name="erro_campos_vazios">Preencha todos os campos</string>
+    <string name="erro_numero_invalido">Digite um número válido</string>
+    <string name="erro_divisao_zero">Divisão por zero não permitida</string>
+    <string name="erro_valor_negativo">Valor não pode ser negativo</string>
+
+    <!-- Cinemática -->
+    <string name="cinematica_titulo">Cinemática</string>
+    <string name="cinematica_vel_media">Velocidade Média</string>
+    <string name="cinematica_vel_formula">v = Δs / Δt</string>
+    <string name="cinematica_acel">Aceleração Média</string>
+    <string name="cinematica_acel_formula">a = Δv / Δt</string>
+    <string name="cinematica_mru">MRU — Posição</string>
+    <string name="cinematica_mru_formula">s = s₀ + v · t</string>
+    <string name="cinematica_mruv_pos">MRUV — Posição</string>
+    <string name="cinematica_mruv_formula">s = s₀ + v₀·t + ½·a·t²</string>
+    <string name="cinematica_mruv_vel">MRUV — Velocidade Final</string>
+    <string name="cinematica_mruv_vel_formula">v = v₀ + a · t</string>
+
+    <!-- Dinâmica -->
+    <string name="dinamica_titulo">Dinâmica — 2ª Lei de Newton</string>
+    <string name="dinamica_calc_forca">Calcular Força (F)</string>
+    <string name="dinamica_forca_formula">F = m · a</string>
+    <string name="dinamica_calc_massa">Calcular Massa (m)</string>
+    <string name="dinamica_massa_formula">m = F / a</string>
+    <string name="dinamica_calc_acel">Calcular Aceleração (a)</string>
+    <string name="dinamica_acel_formula">a = F / m</string>
+
+    <!-- Energia Mecânica -->
+    <string name="energia_titulo">Trabalho e Energia</string>
+    <string name="energia_trabalho">Trabalho (τ)</string>
+    <string name="energia_trabalho_formula">τ = F · d · cos(θ)</string>
+    <string name="energia_cinetica">Energia Cinética (Ec)</string>
+    <string name="energia_cinetica_formula">Ec = ½ · m · v²</string>
+    <string name="energia_potencial">Energia Potencial (Ep)</string>
+    <string name="energia_potencial_formula">Ep = m · g · h   (g = 9,8 m/s²)</string>
+
+    <!-- Termologia -->
+    <string name="termo_titulo">Termologia</string>
+    <string name="termo_dilatacao">Dilatação Linear</string>
+    <string name="termo_dilatacao_formula">ΔL = L₀ · α · ΔT</string>
+    <string name="termo_calor">Quantidade de Calor</string>
+    <string name="termo_calor_formula">Q = m · c · ΔT</string>
+
+    <!-- Óptica -->
+    <string name="optica_titulo">Óptica — Equação de Gauss</string>
+    <string name="optica_gauss">Distância Focal</string>
+    <string name="optica_gauss_formula">1/f = 1/p + 1/p\'</string>
+
+    <!-- Geometria Plana -->
+    <string name="geo_plana_titulo">Geometria Plana</string>
+    <string name="geo_quadrado">Quadrado</string>
+    <string name="geo_quadrado_formula">A = l²   |   P = 4l</string>
+    <string name="geo_retangulo">Retângulo</string>
+    <string name="geo_retangulo_formula">A = b · h   |   P = 2(b + h)</string>
+    <string name="geo_triangulo">Triângulo</string>
+    <string name="geo_triangulo_formula">A = (b · h) / 2   |   P = a + b + c</string>
+    <string name="geo_circulo">Círculo</string>
+    <string name="geo_circulo_formula">A = π · r²   |   C = 2 · π · r</string>
+
+    <!-- Geometria Espacial -->
+    <string name="geo_espacial_titulo">Geometria Espacial</string>
+    <string name="geo_cubo">Cubo</string>
+    <string name="geo_cubo_formula">V = a³   |   A = 6a²</string>
+    <string name="geo_paralelepipedo">Paralelepípedo</string>
+    <string name="geo_paralelepipedo_formula">V = a · b · c</string>
+    <string name="geo_cilindro">Cilindro</string>
+    <string name="geo_cilindro_formula">V = π · r² · h</string>
+    <string name="geo_esfera">Esfera</string>
+    <string name="geo_esfera_formula">V = (4/3) · π · r³   |   A = 4 · π · r²</string>
+
+    <!-- Equações -->
+    <string name="equacoes_titulo">Equações do 2° Grau — Bhaskara</string>
+    <string name="equacoes_formula">ax² + bx + c = 0</string>
+    <string name="equacoes_delta_formula">Δ = b² − 4ac</string>
+    <string name="equacoes_raizes_formula">x = (−b ± √Δ) / 2a</string>
+
+    <!-- Trigonometria -->
+    <string name="trig_titulo">Trigonometria</string>
+    <string name="trig_graus_funcoes">Graus → Funções e Radianos</string>
+    <string name="trig_rad_funcoes">Radianos → Funções e Graus</string>
+    <string name="trig_inversas">Funções Inversas</string>
+    <string name="trig_inversas_formula">arcsen, arccos, arctan → graus</string>
+
+    <!-- Estatística -->
+    <string name="estat_titulo">Estatística</string>
+    <string name="estat_descricao">Média, Mediana e Moda</string>
+    <string name="estat_hint">Digite os números separados por vírgula ou espaço</string>
+    <string name="estat_exemplo">Ex: 4, 7, 2, 9, 4</string>
 </resources>

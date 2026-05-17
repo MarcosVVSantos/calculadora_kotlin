@@ -10,27 +10,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Checkbox">
-        <activity
-            android:name=".EnergiaMecanicaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MovimentoUniformeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TrigonometriaActivity"
-            android:exported="false" />
+
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".FisicaMenuActivity" android:exported="false" />
+        <activity android:name=".MatematicaMenuActivity" android:exported="false" />
+
+        <!-- Física -->
+        <activity android:name=".CinematicaActivity" android:exported="false" />
+        <activity android:name=".DinamicaActivity" android:exported="false" />
+        <activity android:name=".EnergiaMecanicaActivity" android:exported="false" />
+        <activity android:name=".TermologiaActivity" android:exported="false" />
+        <activity android:name=".OpticaActivity" android:exported="false" />
+
+        <!-- Matemática -->
+        <activity android:name=".GeometriaPlanaActivity" android:exported="false" />
+        <activity android:name=".GeometriaEspacialActivity" android:exported="false" />
+        <activity android:name=".EquacoesActivity" android:exported="false" />
+        <activity android:name=".TrigonometriaActivity" android:exported="false" />
+        <activity android:name=".EstatisticaActivity" android:exported="false" />
+
+        <!-- Legacy -->
+        <activity android:name=".MovimentoUniformeActivity" android:exported="false" />
+
     </application>
 
 </manifest>

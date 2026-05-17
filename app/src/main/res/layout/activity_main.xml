@@ -1,73 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F6F9">
+    android:background="#0F1624"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
         android:padding="24dp">
 
+        <!-- Header -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menu de Exercícios"
-            android:textSize="30sp"
+            android:text="@string/app_name"
+            android:textColor="#00C9A7"
+            android:textSize="38sp"
             android:textStyle="bold"
-            android:textColor="#1E3A5F"
-            android:layout_marginBottom="8dp"/>
+            android:letterSpacing="0.04"
+            android:layout_marginTop="24dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Escolha um exercício"
-            android:textSize="18sp"
-            android:textColor="#6B7280"
-            android:layout_marginBottom="32dp"/>
+            android:text="@string/menu_escolha"
+            android:textColor="#8B9CC8"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="36dp"/>
 
-        <Button
-            android:id="@+id/btnEx1"
+        <!-- Física Card -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exercício 1 — Trigonometria"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:padding="14dp"
-            android:backgroundTint="#2563EB"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="16dp"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
 
-        <Button
-            android:id="@+id/btnEx2"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚛"
+                android:textSize="32sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_fisica"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cinemática · Dinâmica · Energia · Termologia · Óptica"
+                android:textColor="#8B9CC8"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnFisica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Abrir Física"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#00C9A7"
+                android:textColor="#0F1624"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <!-- Matemática Card -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exercício 2 — Movimento Uniforme"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:padding="14dp"
-            android:backgroundTint="#1D4ED8"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="16dp"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="20dp"
+            android:layout_marginBottom="28dp">
 
-        <Button
-            android:id="@+id/btnEx3"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="∑"
+                android:textSize="32sp"
+                android:textColor="#4F7FFA"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_matematica"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Geometria · Equações · Trigonometria · Estatística"
+                android:textColor="#8B9CC8"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnMatematica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Abrir Matemática"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#4F7FFA"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <!-- Histórico -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exercício 3 — Energia Mecânica"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:padding="14dp"
-            android:backgroundTint="#1E40AF"
-            android:textColor="#FFFFFF"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/historico_titulo"
+                    android:textColor="#00C9A7"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btnLimparHistorico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_limpar_historico"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:backgroundTint="#2D3A52"
+                    android:textColor="#8B9CC8"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvHistoricoVazio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/historico_vazio"
+                android:textColor="#8B9CC8"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvHistoricoLista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#C8D3EE"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="4dp"
+                android:visibility="gone"/>
+        </LinearLayout>
 
     </LinearLayout>
-
 </ScrollView>

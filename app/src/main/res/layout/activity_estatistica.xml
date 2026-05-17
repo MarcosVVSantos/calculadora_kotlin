@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0F1624">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1A2540"
+        android:elevation="4dp"
+        android:theme="@style/Theme.Checkbox.Toolbar"
+        app:titleTextColor="#FFFFFF"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card"
+                android:padding="16dp" android:layout_marginBottom="8dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/estat_titulo"
+                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/estat_descricao"
+                    android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="@string/estat_hint" android:layout_marginBottom="4dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtListaNumeros"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="text" android:textColor="#FFFFFF"
+                        android:minLines="2" android:gravity="top"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/estat_exemplo"
+                    android:textColor="#8B9CC8" android:textSize="12sp" android:layout_marginBottom="16dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <Button android:id="@+id/btnCalcEstat" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        android:text="@string/btn_calcular" android:textAllCaps="false"
+                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
+                    <Button android:id="@+id/btnLimparEstat" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        android:text="@string/btn_limpar" android:textAllCaps="false"
+                        android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
+                </LinearLayout>
+
+                <TextView android:id="@+id/tvResultEstat" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="14dp"
+                    android:lineSpacingExtra="6dp" android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

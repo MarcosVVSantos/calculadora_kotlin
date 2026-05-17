@@ -2,33 +2,57 @@ package com.example.checkbox
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.checkbox.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
+    companion object {
+        private val historico = mutableListOf<String>()
+
+        fun addHistorico(entry: String) {
+            historico.add(0, entry)
+            if (historico.size > 10) historico.removeAt(10)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnEx1 = findViewById<Button>(R.id.btnEx1)
-        val btnEx2 = findViewById<Button>(R.id.btnEx2)
-        val btnEx3 = findViewById<Button>(R.id.btnEx3)
+        binding.btnFisica.setOnClickListener {
+            startActivity(Intent(this, FisicaMenuActivity::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        }
 
-        btnEx1.setOnClickListener {
-            startActivity(
-                Intent(this, TrigonometriaActivity::class.java)
-            )
+        binding.btnMatematica.setOnClickListener {
+            startActivity(Intent(this, MatematicaMenuActivity::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
-        btnEx2.setOnClickListener {
-            startActivity(
-                Intent(this, MovimentoUniformeActivity::class.java)
-            )
+
+        binding.btnLimparHistorico.setOnClickListener {
+            historico.clear()
+            atualizarHistorico()
         }
-        btnEx3.setOnClickListener {
-            startActivity(
-                Intent(this, EnergiaMecanicaActivity::class.java)
-            )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        atualizarHistorico()
+    }
+
+    private fun atualizarHistorico() {
+        if (historico.isEmpty()) {
+            binding.tvHistoricoVazio.visibility = View.VISIBLE
+            binding.tvHistoricoLista.visibility = View.GONE
+        } else {
+            binding.tvHistoricoVazio.visibility = View.GONE
+            binding.tvHistoricoLista.visibility = View.VISIBLE
+            binding.tvHistoricoLista.text = historico.joinToString("\n")
         }
     }
 }

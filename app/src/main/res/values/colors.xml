@@ -2,4 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorBackground">#0F1624</color>
+    <color name="colorCard">#1A2540</color>
+    <color name="colorCardAlt">#1A2236</color>
+    <color name="colorPrimary">#00C9A7</color>
+    <color name="colorPrimaryDark">#007A66</color>
+    <color name="colorSecondary">#4F7FFA</color>
+    <color name="colorSecondaryDark">#2A5FD8</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#8B9CC8</color>
+    <color name="colorTextMuted">#C8D3EE</color>
+    <color name="colorError">#FF5252</color>
+    <color name="colorDivider">#2D3A52</color>
+    <color name="colorFisica">#00C9A7</color>
+    <color name="colorMatematica">#4F7FFA</color>
+    <color name="colorButtonSecondary">#2D3A52</color>
 </resources>

@@ -27,118 +27,138 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Graus → Funções e Radianos -->
+            <!-- Dilatação Linear -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="vertical" android:background="@drawable/bg_card"
                 android:padding="16dp" android:layout_marginBottom="16dp">
+
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/trig_graus_funcoes"
-                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
+                    android:text="@string/termo_dilatacao"
+                    android:textColor="#00C9A7" android:textStyle="bold" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="sen(θ), cos(θ), tan(θ) e θ em radianos"
+                    android:text="@string/termo_dilatacao_formula"
                     android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Ângulo em graus (°)" android:layout_marginBottom="12dp"
+                    android:hint="Comprimento inicial L₀ (m)" android:layout_marginBottom="8dp"
                     app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
                     app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTrigGraus"
+                        android:id="@+id/edtDilatL0"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Coeficiente de dilatação α (ex: 0.000012)" android:layout_marginBottom="8dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtDilatAlpha"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Variação de temperatura ΔT (°C)" android:layout_marginBottom="12dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtDilatDeltaT"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <Button android:id="@+id/btnCalcTrigGraus" android:layout_width="0dp" android:layout_height="wrap_content"
+                    <Button android:id="@+id/btnCalcDilat" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginEnd="6dp"
                         android:text="@string/btn_calcular" android:textAllCaps="false"
-                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
-                    <Button android:id="@+id/btnLimparTrigGraus" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:backgroundTint="#00C9A7" android:textColor="#0F1624"/>
+                    <Button android:id="@+id/btnLimparDilat" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginStart="6dp"
                         android:text="@string/btn_limpar" android:textAllCaps="false"
                         android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
                 </LinearLayout>
-                <TextView android:id="@+id/tvResultTrigGraus" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
-                    android:textSize="15sp" android:textStyle="bold" android:layout_marginTop="10dp"
-                    android:lineSpacingExtra="4dp" android:visibility="gone"/>
+                <TextView android:id="@+id/tvResultDilat" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#00C9A7"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
+                    android:visibility="gone"/>
             </LinearLayout>
 
-            <!-- Radianos → Funções e Graus -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:background="@drawable/bg_card"
-                android:padding="16dp" android:layout_marginBottom="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/trig_rad_funcoes"
-                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="sen(θ), cos(θ), tan(θ) e θ em graus"
-                    android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Ângulo em radianos (rad)" android:layout_marginBottom="12dp"
-                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
-                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTrigRad"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
-                </com.google.android.material.textfield.TextInputLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <Button android:id="@+id/btnCalcTrigRad" android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:layout_marginEnd="6dp"
-                        android:text="@string/btn_calcular" android:textAllCaps="false"
-                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
-                    <Button android:id="@+id/btnLimparTrigRad" android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:layout_marginStart="6dp"
-                        android:text="@string/btn_limpar" android:textAllCaps="false"
-                        android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
-                </LinearLayout>
-                <TextView android:id="@+id/tvResultTrigRad" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
-                    android:textSize="15sp" android:textStyle="bold" android:layout_marginTop="10dp"
-                    android:lineSpacingExtra="4dp" android:visibility="gone"/>
-            </LinearLayout>
-
-            <!-- Funções Inversas -->
+            <!-- Quantidade de Calor -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="vertical" android:background="@drawable/bg_card"
                 android:padding="16dp" android:layout_marginBottom="8dp">
+
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/trig_inversas"
-                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
+                    android:text="@string/termo_calor"
+                    android:textColor="#00C9A7" android:textStyle="bold" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/trig_inversas_formula"
+                    android:text="@string/termo_calor_formula"
                     android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Valor (entre −1 e 1 para arcsen/arccos)" android:layout_marginBottom="12dp"
+                    android:hint="Massa m (kg)" android:layout_marginBottom="8dp"
                     app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
                     app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTrigInv"
+                        android:id="@+id/edtCalorM"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Calor específico c (J/kg·°C)" android:layout_marginBottom="8dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCalorC"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Variação de temperatura ΔT (°C)" android:layout_marginBottom="12dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCalorDeltaT"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <Button android:id="@+id/btnCalcTrigInv" android:layout_width="0dp" android:layout_height="wrap_content"
+                    <Button android:id="@+id/btnCalcCalor" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginEnd="6dp"
                         android:text="@string/btn_calcular" android:textAllCaps="false"
-                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
-                    <Button android:id="@+id/btnLimparTrigInv" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:backgroundTint="#00C9A7" android:textColor="#0F1624"/>
+                    <Button android:id="@+id/btnLimparCalor" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginStart="6dp"
                         android:text="@string/btn_limpar" android:textAllCaps="false"
                         android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
                 </LinearLayout>
-                <TextView android:id="@+id/tvResultTrigInv" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
-                    android:textSize="15sp" android:textStyle="bold" android:layout_marginTop="10dp"
-                    android:lineSpacingExtra="4dp" android:visibility="gone"/>
+                <TextView android:id="@+id/tvResultCalor" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#00C9A7"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
+                    android:visibility="gone"/>
             </LinearLayout>
 
         </LinearLayout>

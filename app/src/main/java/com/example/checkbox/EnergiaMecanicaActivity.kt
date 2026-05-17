@@ -1,80 +1,87 @@
 package com.example.checkbox
 
 import android.os.Bundle
-import android.widget.*
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.pow
+import com.example.checkbox.databinding.ActivityEnergiaMecanicaBinding
+import kotlin.math.cos
 
 class EnergiaMecanicaActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityEnergiaMecanicaBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_energia_mecanica)
+        binding = ActivityEnergiaMecanicaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val edtMassa = findViewById<EditText>(R.id.edtMassa)
-        val edtAltura = findViewById<EditText>(R.id.edtAltura)
-        val edtVelocidade = findViewById<EditText>(R.id.edtVelocidade)
-
-        val checkEp = findViewById<CheckBox>(R.id.checkEp)
-        val checkEc = findViewById<CheckBox>(R.id.checkEc)
-        val checkEm = findViewById<CheckBox>(R.id.checkEm)
-
-        val btnCalcular = findViewById<Button>(R.id.btnCalcularEnergia)
-        val txtResultado = findViewById<TextView>(R.id.txtResultadoEnergia)
-        val btnVoltar = findViewById<Button>(R.id.btnVoltarMenu)
-
-        btnCalcular.setOnClickListener {
-
-            val massaTexto = edtMassa.text.toString()
-            val alturaTexto = edtAltura.text.toString()
-            val velocidadeTexto = edtVelocidade.text.toString()
-
-            if (
-                massaTexto.isEmpty() ||
-                alturaTexto.isEmpty() ||
-                velocidadeTexto.isEmpty()
-            ) {
-                Toast.makeText(
-                    this,
-                    "Preencha todos os campos",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                return@setOnClickListener
-            }
-
-            val m = massaTexto.toDouble()
-            val h = alturaTexto.toDouble()
-            val v = velocidadeTexto.toDouble()
-
-            val g = 9.8
-
-            var resultado = ""
-
-            val ep = m * g * h
-
-            val ec = 0.5 * m * v.pow(2)
-
-            if (checkEp.isChecked) {
-                resultado += "Energia Potencial: %.2f J\n".format(ep)
-            }
-
-            if (checkEc.isChecked) {
-                resultado += "Energia Cinética: %.2f J\n".format(ec)
-            }
-
-            if (checkEm.isChecked) {
-
-                val em = ep + ec
-
-                resultado += "Energia Mecânica: %.2f J\n".format(em)
-            }
-
-            txtResultado.text = resultado
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            title = getString(R.string.energia_titulo)
         }
 
-        btnVoltar.setOnClickListener {
-            finish()
+        binding.btnCalcTrab.setOnClickListener { calcularTrabalho() }
+        binding.btnLimparTrab.setOnClickListener {
+            binding.edtTrabF.setText("")
+            binding.edtTrabD.setText("")
+            binding.edtTrabTheta.setText("")
+            binding.tvResultTrab.visibility = View.GONE
         }
+
+        binding.btnCalcEc.setOnClickListener { calcularEc() }
+        binding.btnLimparEc.setOnClickListener {
+            binding.edtEcMassa.setText("")
+            binding.edtEcVel.setText("")
+            binding.tvResultEc.visibility = View.GONE
+        }
+
+        binding.btnCalcEp.setOnClickListener { calcularEp() }
+        binding.btnLimparEp.setOnClickListener {
+            binding.edtEpMassa.setText("")
+            binding.edtEpAltura.setText("")
+            binding.tvResultEp.visibility = View.GONE
+        }
+    }
+
+    private fun calcularTrabalho() {
+        val f = binding.edtTrabF.text.toString().toDoubleOrNull()
+        val d = binding.edtTrabD.text.toString().toDoubleOrNull()
+        val theta = binding.edtTrabTheta.text.toString().toDoubleOrNull()
+        if (f == null || d == null || theta == null) { toast("Preencha todos os campos"); return }
+        val thetaRad = Math.toRadians(theta)
+        val trabalho = f * d * cos(thetaRad)
+        binding.tvResultTrab.text = "τ = %.4f J".format(trabalho)
+        binding.tvResultTrab.visibility = View.VISIBLE
+        MainActivity.addHistorico("Trabalho: τ = %.4f J".format(trabalho))
+    }
+
+    private fun calcularEc() {
+        val m = binding.edtEcMassa.text.toString().toDoubleOrNull()
+        val v = binding.edtEcVel.text.toString().toDoubleOrNull()
+        if (m == null || v == null) { toast("Preencha massa e velocidade"); return }
+        val ec = 0.5 * m * v * v
+        binding.tvResultEc.text = "Ec = %.4f J".format(ec)
+        binding.tvResultEc.visibility = View.VISIBLE
+        MainActivity.addHistorico("Energia Cinética: Ec = %.4f J".format(ec))
+    }
+
+    private fun calcularEp() {
+        val m = binding.edtEpMassa.text.toString().toDoubleOrNull()
+        val h = binding.edtEpAltura.text.toString().toDoubleOrNull()
+        if (m == null || h == null) { toast("Preencha massa e altura"); return }
+        val ep = m * 9.8 * h
+        binding.tvResultEp.text = "Ep = %.4f J".format(ep)
+        binding.tvResultEp.visibility = View.VISIBLE
+        MainActivity.addHistorico("Energia Potencial: Ep = %.4f J".format(ep))
+    }
+
+    private fun toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) { finish(); return true }
+        return super.onOptionsItemSelected(item)
     }
 }

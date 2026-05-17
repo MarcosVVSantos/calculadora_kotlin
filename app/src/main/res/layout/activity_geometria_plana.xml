@@ -27,177 +27,202 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Trabalho -->
+            <!-- Quadrado -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="vertical" android:background="@drawable/bg_card"
                 android:padding="16dp" android:layout_marginBottom="16dp">
-
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/energia_trabalho"
-                    android:textColor="#00C9A7" android:textStyle="bold" android:textSize="18sp"/>
+                    android:text="@string/geo_quadrado"
+                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/energia_trabalho_formula"
+                    android:text="@string/geo_quadrado_formula"
                     android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Força F (N)" android:layout_marginBottom="8dp"
+                    android:hint="Lado l" android:layout_marginBottom="12dp"
                     app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
                     app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTrabF"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Deslocamento d (m)" android:layout_marginBottom="8dp"
-                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
-                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTrabD"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Ângulo θ (graus)" android:layout_marginBottom="12dp"
-                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
-                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTrabTheta"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <Button android:id="@+id/btnCalcTrab" android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:layout_marginEnd="6dp"
-                        android:text="@string/btn_calcular" android:textAllCaps="false"
-                        android:backgroundTint="#00C9A7" android:textColor="#0F1624"/>
-                    <Button android:id="@+id/btnLimparTrab" android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:layout_marginStart="6dp"
-                        android:text="@string/btn_limpar" android:textAllCaps="false"
-                        android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
-                </LinearLayout>
-                <TextView android:id="@+id/tvResultTrab" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:textColor="#00C9A7"
-                    android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
-                    android:visibility="gone"/>
-            </LinearLayout>
-
-            <!-- Energia Cinética -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:background="@drawable/bg_card"
-                android:padding="16dp" android:layout_marginBottom="16dp">
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/energia_cinetica"
-                    android:textColor="#00C9A7" android:textStyle="bold" android:textSize="18sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/energia_cinetica_formula"
-                    android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Massa m (kg)" android:layout_marginBottom="8dp"
-                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
-                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtEcMassa"
+                        android:id="@+id/edtQuadLado"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Velocidade v (m/s)" android:layout_marginBottom="12dp"
-                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
-                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtEcVel"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="numberDecimal|numberSigned" android:textColor="#FFFFFF"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <Button android:id="@+id/btnCalcEc" android:layout_width="0dp" android:layout_height="wrap_content"
+                    <Button android:id="@+id/btnCalcQuad" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginEnd="6dp"
                         android:text="@string/btn_calcular" android:textAllCaps="false"
-                        android:backgroundTint="#00C9A7" android:textColor="#0F1624"/>
-                    <Button android:id="@+id/btnLimparEc" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
+                    <Button android:id="@+id/btnLimparQuad" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginStart="6dp"
                         android:text="@string/btn_limpar" android:textAllCaps="false"
                         android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
                 </LinearLayout>
-                <TextView android:id="@+id/tvResultEc" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:textColor="#00C9A7"
+                <TextView android:id="@+id/tvResultQuad" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
                     android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
                     android:visibility="gone"/>
             </LinearLayout>
 
-            <!-- Energia Potencial -->
+            <!-- Retângulo -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card"
+                android:padding="16dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/geo_retangulo"
+                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/geo_retangulo_formula"
+                    android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Base b" android:layout_marginBottom="8dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtRetBase"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Altura h" android:layout_marginBottom="12dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtRetAltura"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <Button android:id="@+id/btnCalcRet" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        android:text="@string/btn_calcular" android:textAllCaps="false"
+                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
+                    <Button android:id="@+id/btnLimparRet" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        android:text="@string/btn_limpar" android:textAllCaps="false"
+                        android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tvResultRet" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- Triângulo -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card"
+                android:padding="16dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/geo_triangulo"
+                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/geo_triangulo_formula"
+                    android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Base b" android:layout_marginBottom="8dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTriBase"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Altura h (para área)" android:layout_marginBottom="8dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTriAltura"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Lado a (para perímetro)" android:layout_marginBottom="8dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTriLadoA"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Lado c (para perímetro)" android:layout_marginBottom="12dp"
+                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
+                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTriLadoC"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <Button android:id="@+id/btnCalcTri" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        android:text="@string/btn_calcular" android:textAllCaps="false"
+                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
+                    <Button android:id="@+id/btnLimparTri" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        android:text="@string/btn_limpar" android:textAllCaps="false"
+                        android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tvResultTri" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- Círculo -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="vertical" android:background="@drawable/bg_card"
                 android:padding="16dp" android:layout_marginBottom="8dp">
-
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/energia_potencial"
-                    android:textColor="#00C9A7" android:textStyle="bold" android:textSize="18sp"/>
+                    android:text="@string/geo_circulo"
+                    android:textColor="#4F7FFA" android:textStyle="bold" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/energia_potencial_formula"
+                    android:text="@string/geo_circulo_formula"
                     android:textColor="#8B9CC8" android:textSize="14sp" android:layout_marginBottom="12dp"/>
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Massa m (kg)" android:layout_marginBottom="8dp"
+                    android:hint="Raio r" android:layout_marginBottom="12dp"
                     app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
                     app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
+                    app:boxStrokeColor="#4F7FFA" app:hintTextColor="#8B9CC8">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtEpMassa"
+                        android:id="@+id/edtCircRaio"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Altura h (m)" android:layout_marginBottom="12dp"
-                    app:boxBackgroundMode="outline" app:boxBackgroundColor="#1A2236"
-                    app:boxCornerRadiusTopStart="10dp" app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp" app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxStrokeColor="#00C9A7" app:hintTextColor="#8B9CC8">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtEpAltura"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="numberDecimal" android:textColor="#FFFFFF"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <Button android:id="@+id/btnCalcEp" android:layout_width="0dp" android:layout_height="wrap_content"
+                    <Button android:id="@+id/btnCalcCirc" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginEnd="6dp"
                         android:text="@string/btn_calcular" android:textAllCaps="false"
-                        android:backgroundTint="#00C9A7" android:textColor="#0F1624"/>
-                    <Button android:id="@+id/btnLimparEp" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:backgroundTint="#4F7FFA" android:textColor="#FFFFFF"/>
+                    <Button android:id="@+id/btnLimparCirc" android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginStart="6dp"
                         android:text="@string/btn_limpar" android:textAllCaps="false"
                         android:backgroundTint="#2D3A52" android:textColor="#8B9CC8"/>
                 </LinearLayout>
-                <TextView android:id="@+id/tvResultEp" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:textColor="#00C9A7"
+                <TextView android:id="@+id/tvResultCirc" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="#4F7FFA"
                     android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="10dp"
                     android:visibility="gone"/>
             </LinearLayout>
